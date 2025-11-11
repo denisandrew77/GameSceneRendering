@@ -9,32 +9,38 @@ import java.util.ArrayList;
 
 public class AsianHouseBuilder implements SpecialRoofHouseBuilder{
 
-    private AsianHouse house;
+    private AsianHouse house = new AsianHouse();
 
-    public House definePositions(Position position) {
+    public HouseBuilder definePositions(Position position) {
         house.setPosition(position);
-        return house;
+        return this;
     }
 
     @Override
-    public House defineDimensions(Dimensions dimensions) {
+    public HouseBuilder defineDimensions(Dimensions dimensions) {
         house.setDimensions(dimensions);
-        return house;
+        return this;
     }
 
     @Override
-    public House buildStructure(ArrayList<String> materials) {
+    public HouseBuilder buildStructure(ArrayList<String> materials) {
         String buildingMaterials = "";
         for(String material: materials){
             buildingMaterials = buildingMaterials.concat(material+" ");
         }
         house.setBuiltOf(buildingMaterials);
-        return house;
+        return this;
     }
 
     @Override
-    public House constructRoof(String roofType) {
+    public HouseBuilder constructRoof(String roofType) {
         house.setRoofType(roofType);
+        return this;
+    }
+
+    @Override
+    public House getResult() {
         return house;
     }
+
 }

@@ -9,28 +9,33 @@ import java.util.ArrayList;
 
 public class EuropeanHouseBuilder implements HouseBuilder{
 
-    private EuropeanHouse house;
+    private EuropeanHouse house = new EuropeanHouse();
 
     @Override
-    public House definePositions(Position position) {
+    public HouseBuilder definePositions(Position position) {
         house.setPosition(position);
-        return house;
+        return this;
     }
 
     @Override
-    public House defineDimensions(Dimensions dimensions) {
+    public HouseBuilder defineDimensions(Dimensions dimensions) {
         house.setDimensions(dimensions);
-        return house;
+        return this;
     }
 
     @Override
-    public House buildStructure(ArrayList<String> buildingMaterials) {
+    public HouseBuilder buildStructure(ArrayList<String> buildingMaterials) {
         String currentMaterial = "";
         for(int i=0;i< buildingMaterials.size();i++){
             currentMaterial = currentMaterial.concat(buildingMaterials.get(i)+" ");
         }
         house.setBuiltOf(currentMaterial);
+        return this;
+    }
+
+    @Override
+    public House getResult() {
         return house;
     }
-    
+
 }

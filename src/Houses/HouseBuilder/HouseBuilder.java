@@ -6,9 +6,10 @@ import Others.Position;
 
 import java.util.ArrayList;
 
-interface HouseBuilder {
-    House definePositions(Position position);
-    House defineDimensions(Dimensions dimensions);
-    House buildStructure(ArrayList<String> materials);
+public interface HouseBuilder {
+    HouseBuilder definePositions(Position position);
+    HouseBuilder defineDimensions(Dimensions dimensions);
+    HouseBuilder buildStructure(ArrayList<String> materials);
+    House getResult();
 }
 

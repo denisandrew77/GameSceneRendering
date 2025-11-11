@@ -8,9 +8,7 @@ import java.util.ArrayList;
 public class AfricanHouse extends House{
     private ArrayList<String> materials = new ArrayList<String>();
 
-    public AfricanHouse(Position position, Dimensions dimensions) {
-        super(position, dimensions);
-    }
+    public AfricanHouse() {}
 
     public ArrayList<String> getMaterials() {
         return materials;

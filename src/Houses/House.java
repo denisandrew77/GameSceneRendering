@@ -7,10 +7,7 @@ public abstract class House {
     private Position position;
     private Dimensions dimensions;
 
-    public House(Position position, Dimensions dimensions){
-        this.position=position;
-        this.dimensions=dimensions;
-    }
+    public House(){}
 
     public Position getPosition() {
         return position;

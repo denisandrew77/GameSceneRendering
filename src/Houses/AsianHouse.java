@@ -6,11 +6,7 @@ import Others.Position;
 public class AsianHouse extends  House{
     private String builtOf;
     private String roofType;
-    public AsianHouse(Position position, Dimensions dimensions,String roofType, String builtOf){
-        super(position,dimensions);
-        this.builtOf=builtOf;
-        this.roofType=roofType;
-    }
+    public AsianHouse(){}
 
     public String getBuiltOf() {
         return builtOf;
