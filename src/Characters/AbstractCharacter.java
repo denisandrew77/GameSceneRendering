@@ -31,5 +31,8 @@ public abstract class AbstractCharacter {
     public void addAbility(String ability){
         abilities.add(ability);
     }
-    
+
+    public ArrayList<String> getAbilities(){return abilities;}
+
+    public void setPosition(Position position) {this.position = position;}
 }

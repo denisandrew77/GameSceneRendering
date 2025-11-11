@@ -33,13 +33,13 @@ public class App {
         ////////////////////
     /* Patterns used
      * Creational
-     * 1. Factory Method - character type creation
+     * /1. Factory Method - character type creation
      * 2. Abstract factory
      * /3. Singleton - Board creation (has to be the same exact board throughout the program)
      * /4. Builder - scene building (1. Board Creation; 2. House Creation; 3. People creation)
      *             - house creation
      * Structural
-     * 5. Decorator -
+     * 5. Decorator - Moving the character/characters (wrap the character in the ability to move)
      * /6. Composite - Character types
      *              - House Types (working with houses refferenced through general House class)
      * Behavioral
