@@ -10,4 +10,7 @@ public class BoardPosition extends Position{
     public boolean isOccupied() {
         return occupied;
     }
+    public void setOccupied(boolean occupied) {
+        this.occupied = occupied;
+    }
 }
