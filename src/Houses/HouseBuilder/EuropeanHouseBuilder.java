@@ -34,7 +34,7 @@ public class EuropeanHouseBuilder implements HouseBuilder{
     }
 
     @Override
-    public House getResult() {
+    public EuropeanHouse getResult() {
         return house;
     }
 

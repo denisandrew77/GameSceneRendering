@@ -39,7 +39,7 @@ public class AsianHouseBuilder implements SpecialRoofHouseBuilder{
     }
 
     @Override
-    public House getResult() {
+    public AsianHouse getResult() {
         return house;
     }
 

@@ -55,18 +55,12 @@ public class Board {
         else System.out.print(" Occupied spot");
     }
 
-    public void setOccupiedPositionForGroup(ArrayList<AbstractCharacter> group){
-        for(int i=0;i<group.size();i++){
-           gameBoard[group.get(i).getPosition().getY()][group.get(i).getPosition().getX()].setOccupied(true);
-        }
-    }
 
     public boolean verifyPosition(Position position){
         if(position.getX()>= dimensions.getWidth()
                 || position.getX()<0
                 || position.getY()<0
                 || position.getY()>= dimensions.getLength()) {
-            System.out.println("Positions:" + position.getX()+" "+ position.getY());
             return false;
         }
         else return true;
@@ -74,9 +68,7 @@ public class Board {
 
     public boolean verifyOcuppiedPosition(Position position){
         if(verifyPosition(position)){
-            System.out.println("Positions in first:" + position.getX()+" "+ position.getY());
             if(this.getGameBoard()[position.getX()][position.getY()].isOccupied()){
-                System.out.println("Positions in second:" + position.getX()+" "+ position.getY());
                 return true;
             }
         }
@@ -86,8 +78,13 @@ public class Board {
     public void visualizeBoard(){
         for(int i = 0; i < dimensions.getWidth(); i++){
             for(int j = 0; j < dimensions.getLength(); j++){
-                System.out.print(i+" "+j+" ");
-                System.out.print(gameBoard[i][j].isOccupied()+" ");
+
+                if(gameBoard[i][j].isOccupied()){
+                    System.out.print(1+" ");
+                } else{
+                    System.out.print(0+" ");
+                }
+
             }
             System.out.println();
         }

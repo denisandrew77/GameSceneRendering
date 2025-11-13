@@ -14,12 +14,11 @@ public class MovingDecorator extends  BaseMovingDecorator{
     @Override
     public void moveCharacterTo(Board board, Position position) {
         if(board.verifyPosition(position) && !board.verifyOcuppiedPosition(position)){
-            System.out.println("Position changed: " + position.getX()+" "+ position.getY());
+            System.out.println("Character moved "+position.getX()+" "+position.getY());
             //change previous position back to false
             board.getGameBoard()[this.getCharacter().getPosition().getX()][this.getCharacter().getPosition().getY()].setOccupied(false);
             //change its new position to true
             board.getGameBoard()[position.getX()][position.getY()].setOccupied(true);
-            System.out.println("Value: " + board.getGameBoard()[position.getX()][position.getY()].isOccupied());
         }
         else System.out.println(position.getX()+" "+ position.getY()+"Invalid position, character can not be moved");
     }
