@@ -28,6 +28,7 @@ public class MovingDecorator extends  BaseMovingDecorator{
         if(board.verifyPosition(position)){
             board.setOccupiedPosition(position);
             System.out.println("Character successfully initialised on map");
+            board.addSceneElement(this.getCharacter().toString());
         }
         else System.out.println("Cannot put on map");
     }

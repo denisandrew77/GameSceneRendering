@@ -14,23 +14,52 @@ import Houses.HouseInitializationOnMap.HouseOnMapDecorator;
 import Others.BoardPosition;
 import Others.Dimensions;
 import Others.Position;
+import SceneRendering.AbstractSceneFactory;
 import SceneRendering.AfricanSceneFactory;
 import SceneRendering.AsianSceneFactory;
 import SceneRendering.EuropeanSceneFactory;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
 
+        System.out.println("Width: ");
+        Scanner widthInput = new Scanner(System.in);
+        int width = widthInput.nextInt();
+
+        System.out.println("Length: ");
+        Scanner lengthInput = new Scanner(System.in);
+        int length = lengthInput.nextInt();
+
+        System.out.println("Scene Type: ");
+        Scanner sceneTypeInput = new Scanner(System.in);
+        String sceneType = sceneTypeInput.nextLine();
+
+        //creating the scene - part 1
+        AbstractSceneFactory sceneFactory;
+
+        switch (sceneType) {
+            case "asian":
+                sceneFactory = new AsianSceneFactory();
+                break;
+            case "african":
+                sceneFactory = new AfricanSceneFactory();
+                break;
+            case "european":
+                sceneFactory = new EuropeanSceneFactory();
+                break;
+            default:
+                sceneFactory = new AsianSceneFactory();
+        }
         //Board creation
-        Dimensions boardDimensions = new Dimensions(4,11);
+        Dimensions boardDimensions = new Dimensions(width,length);
         Board board = Board.getBoard(boardDimensions);
+        //creating scene - part 2
+        sceneFactory.createHouses(board);
         board.visualizeBoard();
         System.out.println("\n");
-        //Scene creation
-        EuropeanSceneFactory euroscene = new EuropeanSceneFactory();
-        euroscene.createHouses(board);
         //Character 1
         Position position4 = new Position(0,0);
         HumanFactory humanFactory = new HumanFactory();
@@ -70,6 +99,7 @@ public class App {
         movingCharacter6.moveCharacterTo(board,position3);
         board.visualizeBoard();
 
+        board.render();
         ////////////////////
     /* Patterns used
      * Creational

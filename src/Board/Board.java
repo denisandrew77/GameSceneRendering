@@ -12,10 +12,13 @@ public class Board {
     private Dimensions dimensions;
     private BoardPosition[][] gameBoard;
     private static Board boardObject;
+    private ArrayList<String> sceneElements;
+
 
     private Board(Dimensions dimensions){
         this.dimensions = dimensions;
         this.gameBoard = new BoardPosition[dimensions.getWidth()][dimensions.getLength()];
+        this.sceneElements = new ArrayList<String>();
         for(int i=0;i<dimensions.getWidth();i++){
             for(int j=0;j<dimensions.getLength();j++){
                 this.gameBoard[i][j] = new BoardPosition(j,i,false);
@@ -89,5 +92,13 @@ public class Board {
             System.out.println();
         }
     }
+    public void render() {
+        for(String element: sceneElements){
+            System.out.println(element.toString());
+        }
+    }
 
+    public void addSceneElement(String element) {
+        sceneElements.add(element);
+    }
 }

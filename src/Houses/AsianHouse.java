@@ -23,5 +23,13 @@ public class AsianHouse extends  House{
     public void setRoofType(String roofType) {
         this.roofType = roofType;
     }
-    
+
+    @Override
+    public String toString(){
+        return "Asian House: Position: "+
+                this.getPosition().getX()+" "+this.getPosition().getY()+
+                ", Size: "+this.getDimensions().getWidth()+"x"+this.getDimensions().getLength()+
+                "Built of: "+builtOf+
+                ", Roof type: "+roofType;
+    }
 }

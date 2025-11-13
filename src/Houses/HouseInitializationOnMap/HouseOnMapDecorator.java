@@ -33,6 +33,7 @@ public class HouseOnMapDecorator extends BaseHouseDecorator{
                     board.getGameBoard()[i][j].setOccupied(true);
                 }
             }
+            board.addSceneElement(this.getWrappee().toString());
             System.out.println("House Initilised succesfully "+x+" "+y);
         }
         else{

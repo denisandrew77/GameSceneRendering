@@ -31,7 +31,7 @@ public class EuropeanSceneFactory implements AbstractSceneFactory{
         ArrayList<String> houseMaterials2 = new ArrayList<String>();
         Position position2 = new Position(1,5);
         Dimensions dimensions2 = new Dimensions(2,2);
-        houseMaterials.add("concrete");
+        houseMaterials2.add("concrete");
         House house2 = euroHouseBuilder
                 .definePositions(position2)
                 .defineDimensions(dimensions2)

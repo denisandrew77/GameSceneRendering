@@ -2,6 +2,6 @@ package SceneRendering;
 
 import Board.Board;
 
-interface AbstractSceneFactory {
+public interface AbstractSceneFactory {
     void createHouses(Board board);
 }

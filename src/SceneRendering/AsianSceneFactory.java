@@ -33,7 +33,7 @@ public class AsianSceneFactory implements AbstractSceneFactory{
         ArrayList<String> houseMaterials2 = new ArrayList<String>();
         Position position2 = new Position(1,3);
         Dimensions dimensions2 = new Dimensions(2,2);
-        houseMaterials.add("bamboo");
+        houseMaterials2.add("bamboo");
         House house2 = asianHouseBuilder
                 .constructRoof("Asian Roof")
                 .definePositions(position2)

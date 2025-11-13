@@ -17,4 +17,12 @@ public class AfricanHouse extends House{
     public void setMaterials(ArrayList<String> materials) {
         this.materials = materials;
     }
+
+    @Override
+    public String toString(){
+        return "African House: Position: "+
+                this.getPosition().getX()+" "+this.getPosition().getY()+
+                ", Size: "+this.getDimensions().getWidth()+"x"+this.getDimensions().getLength()+
+                "Materials: "+this.getMaterials();
+    }
 }

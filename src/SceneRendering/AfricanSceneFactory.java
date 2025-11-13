@@ -32,8 +32,8 @@ public class AfricanSceneFactory implements AbstractSceneFactory{
         ArrayList<String> houseMaterials2 = new ArrayList<String>();
         Position position2 = new Position(0,5);
         Dimensions dimensions2 = new Dimensions(2,2);
-        houseMaterials.add("wail");
-        houseMaterials.add("cane");
+        houseMaterials2.add("wail");
+        houseMaterials2.add("cane");
         House house2 = africanHouseBuilder
                 .definePositions(position2)
                 .defineDimensions(dimensions2)
