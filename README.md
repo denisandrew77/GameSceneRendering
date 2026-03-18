@@ -1,18 +1,31 @@
-## Getting Started
+🧩 Project Overview
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+This project implements a board-based game simulation system in Java, where multiple types of characters (humans, elves, etc.) are rendered in on the board and can perform different moves.
 
-## Folder Structure
+The application focuses on core logic and architecture, emphasizing the use of design patterns to ensure scalability, flexibility, and clean separation of concerns.
 
-The workspace contains two folders by default, where:
+🌍 Core Concept
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+- A configurable board (2D grid) hosts all entities.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+- Characters have attributes such as position, size, age, and abilities.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+- Characters can be organized into hierarchical structures like groups, legions, or armies.
 
-## Dependency Management
+- The environment includes scene-specific houses (European, Asian, African), each with unique characteristics.
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+- Movement is validated to prevent overlapping with houses or other entities.
+
+🏗️ Key Features
+
+- Scene generation based on cultural themes
+
+- Collision detection for characters and groups
+
+- Group movement logic (aggregate size handling)
+
+- Central .render() method to display the current state of all entities
+
+🎯 Objective
+
+The goal of this project is to demonstrate how multiple design patterns (such as Factory, Composite, Command, and others) can be applied to build a modular and extensible game simulation engine.
