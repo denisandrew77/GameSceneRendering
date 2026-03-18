@@ -5,18 +5,18 @@ import Houses.House;
 import Others.BoardPosition;
 import Others.Position;
 
-public class HouseOnMapDecorator extends BaseHouseDecorator{
+public class HouseOnMapDecorator extends House{
+    private House wrapee;
 
     public HouseOnMapDecorator(House wrappee) {
-        super(wrappee);
+        this.wrapee = wrappee;
     }
 
-    @Override
     public void initialiseHouseOnMap(Board board){
-        int x = this.getWrappee().getPosition().getX();
-        int y = this.getWrappee().getPosition().getY();
-        int length = this.getWrappee().getDimensions().getLength();
-        int width = this.getWrappee().getDimensions().getWidth();
+        int x = this.wrapee.getPosition().getX();
+        int y = this.wrapee.getPosition().getY();
+        int length = this.wrapee.getDimensions().getLength();
+        int width = this.wrapee.getDimensions().getWidth();
         boolean canPutHouse = true;
         for(int i = x; i<x+width; i++){
             for(int j=y; j<y+length; j++){
@@ -33,7 +33,7 @@ public class HouseOnMapDecorator extends BaseHouseDecorator{
                     board.getGameBoard()[i][j].setOccupied(true);
                 }
             }
-            board.addSceneElement(this.getWrappee().toString());
+            board.addSceneElement(this.wrapee.toString());
             System.out.println("House Initilised succesfully "+x+" "+y);
         }
         else{
